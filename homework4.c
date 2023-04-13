@@ -81,7 +81,7 @@ void multiplyMatrix(int **a, int **b, int **c, int rows1, int cols1, int cols2) 
 int main() {
     int rows1, cols1, rows2, cols2;
 
-    printf("Enter the number of rows of matrix A: ");
+    printf("Enter the number of rows of matrix A: "); //행렬 A의 행 개수를 입력 받는다.
     scanf("%d", &rows1);
     printf("Enter the number of columns of matrix A: ");
     scanf("%d", &cols1);

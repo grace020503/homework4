@@ -1,12 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void ptintid(){
+    char *name = "Kim sieun";
+	char *id = "2021053007";
+
+    printf("-----[%s] [%s]-----\n\n", name, id); //name,  id 출력
+}
+
 // 행렬 출력 함수
 void printMatrix(int **matrix, int rows, int cols) {
-    printf("Matrix:\n");
+    printf("Matrix:\n"); // 입력 받은 행의 크기 출력
     for(int i=0; i<rows; i++) {
         for(int j=0; j<cols; j++) {
-            printf("%d ", matrix[i][j]);
+            printf("%d ", matrix[i][j]); // 각 행렬의 크기만큼 요소 출력
         }
         printf("\n");
     }
@@ -14,9 +21,9 @@ void printMatrix(int **matrix, int rows, int cols) {
 
 // 행렬 동적 메모리 할당 함수
 int **allocateMatrix(int rows, int cols) {
-    int **matrix = (int **)malloc(rows * sizeof(int *));
+    int **matrix = (int **)malloc(rows * sizeof(int *)); //row 크기의 int 포인터를 동적할당 한다.
     for(int i=0; i<rows; i++) {
-        matrix[i] = (int *)malloc(cols * sizeof(int));
+        matrix[i] = (int *)malloc(cols * sizeof(int)); //i번째 행에 대해, 열 크기의 int 변수를 동적 할당 한ㄷ.
     }
     return matrix;
 }
@@ -24,14 +31,14 @@ int **allocateMatrix(int rows, int cols) {
 // 할당된 행렬 동적 메모리 해제 함수
 void freeMatrix(int **matrix, int rows) {
     for(int i=0; i<rows; i++) {
-        free(matrix[i]);
+        free(matrix[i]); // 동적할당 해제
     }
-    free(matrix);
+    free(matrix); // 포인터 동적할당 해제
 }
 
 // 행렬 입력 함수
 void inputMatrix(int **matrix, int rows, int cols) {
-    printf("Enter matrix elements:\n");
+    printf("Enter matrix elements:\n"); //행렬 요소를 입력
     for(int i=0; i<rows; i++) {
         for(int j=0; j<cols; j++) {
             scanf("%d", &matrix[i][j]);
@@ -81,9 +88,9 @@ void multiplyMatrix(int **a, int **b, int **c, int rows1, int cols1, int cols2) 
 int main() {
     int rows1, cols1, rows2, cols2;
 
-    printf("Enter the number of rows of matrix A: "); //행렬 A의 행 개수를 입력 받는다.
+    printf("Enter the number of rows of matrix A: "); //행렬 A의 행 개수를 입력
     scanf("%d", &rows1);
-    printf("Enter the number of columns of matrix A: ");
+    printf("Enter the number of columns of matrix A: "); // 행렬 A의 열 개수 입력
     scanf("%d", &cols1);
 
     // 행렬 A 할당
@@ -92,9 +99,9 @@ int main() {
     inputMatrix(a, rows1, cols1);
     printMatrix(a, rows1, cols1);
 
-    printf("\nEnter the number of rows of matrix B: ");
+    printf("\nEnter the number of rows of matrix B: "); //행렬 B의 행 개수를 입력
     scanf("%d", &rows2);
-    printf("Enter the number of columns of matrix B: ");
+    printf("Enter the number of columns of matrix B: "); // 행렬 B의 열 개수 입력
     scanf("%d", &cols2);
 
     // 행렬 B 할당

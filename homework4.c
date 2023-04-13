@@ -21,9 +21,9 @@ void printMatrix(int **matrix, int rows, int cols) {
 
 // 행렬 동적 메모리 할당 함수
 int **allocateMatrix(int rows, int cols) {
-    int **matrix = (int **)malloc(rows * sizeof(int *)); //row 크기의 int 포인터를 동적할당 한다.
+    int **matrix = (int **)malloc(rows * sizeof(int *)); //row 크기의 int 포인터를 동적할당
     for(int i=0; i<rows; i++) {
-        matrix[i] = (int *)malloc(cols * sizeof(int)); //i번째 행에 대해, 열 크기의 int 변수를 동적 할당 한ㄷ.
+        matrix[i] = (int *)malloc(cols * sizeof(int)); //i번째 행에 대해, 열 크기의 int 변수를 동적할당
     }
     return matrix;
 }
